@@ -69,7 +69,7 @@ namespace PlatformService.Controllers
             }
             catch (Exception e) 
             {
-                Console.WriteLine($"---> Could not sync syncroniusly: {e.Message} ");
+                Console.WriteLine($"---> Could not sync synchronously: {e.Message} ");
             }
 
             //Send Async Message 
@@ -84,7 +84,7 @@ namespace PlatformService.Controllers
             catch (System.Exception ex)
             {
                 
-                Console.WriteLine($"--> Could not send asynchronusly message {ex.Message}");
+                Console.WriteLine($"--> Could not send asynchronous message {ex.Message}");
             }
 
             return CreatedAtRoute(nameof(GetPlatformById), new {id = platformReadDto.Id}, platformReadDto);
