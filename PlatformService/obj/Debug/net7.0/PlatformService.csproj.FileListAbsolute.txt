@@ -157,3 +157,4 @@
 /var/www/dotnet/E3/PlatformService/obj/Debug/net7.0/PlatformService.genruntimeconfig.cache
 /var/www/dotnet/E3/PlatformService/obj/Debug/net7.0/ref/PlatformService.dll
 /var/www/dotnet/E3/PlatformService/bin/Debug/net7.0/appsettings.Production.json
+/var/www/dotnet/E3/PlatformService/bin/Debug/net7.0/RabbitMQ.Client.dll

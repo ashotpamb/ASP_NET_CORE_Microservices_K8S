@@ -1,0 +1,7 @@
+apiVersion: apps/v1
+kind: ConfigMap
+metadata:
+  name: rabbitmq-config
+data:
+    rabbitmq.conf: |
+      loopback_users.guest = true 

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PlatformService.AsyncDataService;
 using PlatformService.Data;
 using PlatformService.SyncDataServices.Http;
 
@@ -33,7 +34,10 @@ builder.Services.AddDbContext<AppDbContext>(
     });
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddHttpClient<ICommandDataClient, HttpDataCommandClient>();
+builder.Services.AddSingleton<IMessageBusClient, MessageBusClient>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
