@@ -77,3 +77,5 @@
 /var/www/dotnet/E3/CommandsService/obj/Debug/net7.0/CommandsService.pdb
 /var/www/dotnet/E3/CommandsService/obj/Debug/net7.0/CommandsService.genruntimeconfig.cache
 /var/www/dotnet/E3/CommandsService/obj/Debug/net7.0/ref/CommandsService.dll
+/var/www/dotnet/E3/CommandsService/bin/Debug/net7.0/appsettings.Productin.json
+/var/www/dotnet/E3/CommandsService/bin/Debug/net7.0/RabbitMQ.Client.dll
