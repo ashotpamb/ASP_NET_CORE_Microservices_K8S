@@ -51,7 +51,7 @@ namespace CommandsService.Controllers
             return Ok(_mapper.Map<CommandReadDtos>(command));
         }
 
-        [HttpPost]
+        [HttpPost(Name ="CreateCommandForPlatform")]
         public ActionResult<CommandReadDtos> CreateCommandForPlatform(int platformId, CommandCreateDtos commandCreateDtos)
         {
             Console.WriteLine($"--> Hit CreateCommandForPlatform: {platformId}");

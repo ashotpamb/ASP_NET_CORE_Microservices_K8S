@@ -5,7 +5,7 @@ using RabbitMQ.Client;
 
 namespace PlatformService.AsyncDataService
 {
-    public class MessageBusClient : IMessageBusClient, IDisposable
+    public class MessageBusClient : IMessageBusClient
     {
         private readonly IConfiguration _configuration;
         private readonly IConnection _connection;
@@ -29,7 +29,7 @@ namespace PlatformService.AsyncDataService
 
                 Console.WriteLine("---> Connected to RabbitMq Client");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
 
                 Console.WriteLine($"--> Could not connect to RabbitMq Client {ex.Message}");
