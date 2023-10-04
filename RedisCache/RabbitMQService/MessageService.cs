@@ -59,7 +59,7 @@ namespace RedisCacahe.RabbitMQService
                 Console.WriteLine("--> Event received");
                 var body = ea.Body;
                 var notificationMessage = Encoding.UTF8.GetString(body.ToArray());
-                Console.WriteLine(notificationMessage);
+                _eventProcessing.EventProcess(notificationMessage);
             };
             _channel.BasicConsume(queue: _queueName, autoAck: true, consumer: consumer);
 

@@ -43,3 +43,5 @@
 /var/www/dotnet/E3/RedisCache/bin/Debug/net7.0/appsettings.Production.json
 /var/www/dotnet/E3/RedisCache/bin/Debug/net7.0/AutoMapper.dll
 /var/www/dotnet/E3/RedisCache/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/var/www/dotnet/E3/RedisCache/bin/Debug/net7.0/Pipelines.Sockets.Unofficial.dll
+/var/www/dotnet/E3/RedisCache/bin/Debug/net7.0/StackExchange.Redis.dll

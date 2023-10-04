@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-cache-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redisservice
+  template:
+    metadata:
+      labels:
+        app: redisservice
+    spec:
+      containers:
+        - name: redisservice
+          image: 743477/rediscache
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rediscache-cluster-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: redisservice
+  ports:
+    - name: redisservice
+      protocol: TCP
+      port: 80

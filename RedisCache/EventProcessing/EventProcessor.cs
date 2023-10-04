@@ -1,10 +1,20 @@
 using System.Text.Json;
 using RedisCacahe.Dtos;
+using RedisCacahe.Model;
+using RedisCacahe.RedisService;
 
 namespace RedisCacahe.EventProcessing
 {
     public class EventProcessor : IEventProcessing
     {
+        private readonly IRedisService _redisService;
+        private readonly IConfiguration _configuration;
+
+        public EventProcessor(IRedisService redisService, IConfiguration configuration)
+        {
+            _redisService = redisService;
+            _configuration = configuration;
+        }
         public void EventProcess(string eventMessage)
         {
             var eventType = DermineEvent(eventMessage);
@@ -25,7 +35,7 @@ namespace RedisCacahe.EventProcessing
 
         private void SetRedisCache(string message)
         {
-            Console.WriteLine("--> Set data to readis");
+            _redisService.SetData("test", "test", DateTimeOffset.Now.AddSeconds(30));
         }
 
         private void GetRedisCache(string message)

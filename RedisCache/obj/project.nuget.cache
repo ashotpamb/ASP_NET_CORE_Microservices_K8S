@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WSBiRF0C2B+AsN51XiSEV1J7E518YeeDH62K4DRsEd1KG4xHrNOi5TwttB6aw8UXSuxa+188OU222jYH+Ul/Kg==",
+  "dgSpecHash": "8U5tPDWT4c/XfWxMsU6RU/a6YDEzVkHlxPgdKNujVAJ2zvUpNOikj/nBaTIuHY/q4WLCfBUIo8Tqsx/LuA2wUg==",
   "success": true,
   "projectFilePath": "/var/www/dotnet/E3/RedisCache/RedisCache.csproj",
   "expectedPackageFiles": [
@@ -27,12 +27,15 @@
     "/home/arsh/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/home/arsh/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/home/arsh/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/home/arsh/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
     "/home/arsh/.nuget/packages/rabbitmq.client/6.5.0/rabbitmq.client.6.5.0.nupkg.sha512",
+    "/home/arsh/.nuget/packages/stackexchange.redis/2.6.122/stackexchange.redis.2.6.122.nupkg.sha512",
     "/home/arsh/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/home/arsh/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/home/arsh/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "/home/arsh/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "/home/arsh/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
+    "/home/arsh/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
     "/home/arsh/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
     "/home/arsh/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/home/arsh/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
