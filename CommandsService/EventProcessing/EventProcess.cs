@@ -40,7 +40,7 @@ namespace CommandsService.EventProcessing
                 case EventType.PlatformPublished:
                     addPlatform(message);
                     break;
-                default:
+                default:    
                     break;
             }
         }

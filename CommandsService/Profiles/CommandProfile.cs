@@ -15,4 +15,4 @@ namespace CommandsService.Profiles
             .ForMember(dest => dest.ExternalId, opt => opt.MapFrom(src => src.Id));
         }
     }
-}
+}   

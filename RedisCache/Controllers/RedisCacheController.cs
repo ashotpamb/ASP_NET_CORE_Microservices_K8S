@@ -1,6 +1,6 @@
 namespace RedisCacahe.AddControllers
 {
-    public class PlatformController
+    public class RedisCacheController
     {
         
     }

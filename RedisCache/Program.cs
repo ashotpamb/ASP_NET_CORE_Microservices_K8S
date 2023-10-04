@@ -1,9 +1,16 @@
+using RedisCacahe.EventProcessing;
+using RedisCacahe.RabbitMQService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
+
 builder.Services.AddControllers();
+builder.Services.AddHostedService<MessageService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSingleton<IEventProcessing, EventProcessor>();
 
 var app = builder.Build();
 
