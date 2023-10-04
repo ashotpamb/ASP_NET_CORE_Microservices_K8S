@@ -11,10 +11,10 @@ namespace RedisCacahe.EventProcessing
 
             switch (eventType)
             {
-                case EventType.RedisCacaheSet:
+                case EventType.RedisCacheSet:
                     SetRedisCache(eventMessage);
                     break;
-                case EventType.RedisCacaheGet:
+                case EventType.RedisCacheGet:
                     GetRedisCache(eventMessage);
                     break;
                 default:
