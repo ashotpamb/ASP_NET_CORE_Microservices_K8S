@@ -65,9 +65,33 @@ namespace CommandsService.AsyncDataServices
                 var body = ea.Body;
                 var notificationMessage = Encoding.UTF8.GetString(body.ToArray());
                 _eventProcessing.ProcessEvent(notificationMessage);
+
+                try
+                {
+                    RedisCache("hello:1", "redis-cache");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"--> Could not send message to RabbitMQ: {ex.Message}");
+                }
             };
             _channel.BasicConsume(queue: _queueName, autoAck: true, consumer: consumer);
             return Task.CompletedTask;
+
+        }
+
+        private void RedisCache(string message, string queuename)
+        {
+            var body = Encoding.UTF8.GetBytes(message);
+            _channel.ExchangeDeclare(exchange: "redis", type: ExchangeType.Fanout);
+
+
+            _channel.BasicPublish(exchange: "redis",
+                    routingKey: "",
+                    basicProperties: null,
+                    body: body);
+
+            Console.WriteLine($"--> Message sent to queue '{queuename}': {message}");
 
         }
     }

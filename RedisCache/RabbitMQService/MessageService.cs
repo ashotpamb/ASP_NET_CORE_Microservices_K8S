@@ -1,5 +1,7 @@
 
+using System.Text;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using RedisCacahe.EventProcessing;
 
 namespace RedisCacahe.RabbitMQService
@@ -32,10 +34,10 @@ namespace RedisCacahe.RabbitMQService
             _connection = factory.CreateConnection();
             _channel = _connection.CreateModel();
 
-            _channel.ExchangeDeclare(exchange: "trigger", type: ExchangeType.Fanout);
+            _channel.ExchangeDeclare(exchange: "redis", type: ExchangeType.Fanout);
             _queueName = _channel.QueueDeclare().QueueName;
             _channel.QueueBind(queue: _queueName,
-                    exchange: "trigger",
+                    exchange: "redis",
                     routingKey: ""
                     );
 
@@ -51,6 +53,15 @@ namespace RedisCacahe.RabbitMQService
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             stoppingToken.ThrowIfCancellationRequested();
+            var consumer = new EventingBasicConsumer(_channel);
+            consumer.Received += (ModuleHandle, ea) =>
+            {
+                Console.WriteLine("--> Event received");
+                var body = ea.Body;
+                var notificationMessage = Encoding.UTF8.GetString(body.ToArray());
+                Console.WriteLine(notificationMessage);
+            };
+            _channel.BasicConsume(queue: _queueName, autoAck: true, consumer: consumer);
 
             return Task.CompletedTask;
         }
