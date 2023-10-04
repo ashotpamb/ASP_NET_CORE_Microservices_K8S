@@ -8,7 +8,7 @@ namespace RedisCacahe.EventProcessing
         public void EventProcess(string eventMessage)
         {
             var eventType = DermineEvent(eventMessage);
-            
+
             switch (eventType)
             {
                 case EventType.RedisCacaheSet:
@@ -42,10 +42,10 @@ namespace RedisCacahe.EventProcessing
             {
                 case "Cache_in":
                     Console.WriteLine("--> Cacheing in Redis");
-                    return EventType.RedisCacaheSet;
+                    return EventType.RedisCacheSet;
                 case "Cache_out":
                     Console.WriteLine("--> Get cache from redis");
-                    return EventType.RedisCacaheGet;
+                    return EventType.RedisCacheGet;
                 default:
                     Console.WriteLine("--> Could not determine event type");
                     return EventType.Undetermined;
@@ -53,8 +53,8 @@ namespace RedisCacahe.EventProcessing
         }
         enum EventType
         {
-            RedisCacaheSet,
-            RedisCacaheGet,
+            RedisCacheSet,
+            RedisCacheGet,
             Undetermined
         }
     }
