@@ -9,6 +9,7 @@ namespace CommandsService.Dtos
         public string CommandLine { get; set; }
 
         public int PlatfromId { get; set; }
+        public string Event { get; set; }
 
     }
 }

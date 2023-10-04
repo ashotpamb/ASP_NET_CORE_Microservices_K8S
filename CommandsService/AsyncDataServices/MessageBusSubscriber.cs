@@ -1,5 +1,8 @@
 
 using System.Text;
+
+using System.Text.Json;
+using CommandsService.Dtos;
 using CommandsService.EventProcessing;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -68,7 +71,11 @@ namespace CommandsService.AsyncDataServices
 
                 try
                 {
-                    RedisCache("hello:1", "redis-cache");
+                    var commandReadDtos =  new CommandReadDtos() {Id = 2, HowTo ="hello", CommandLine="World", PlatfromId = 5};
+                    commandReadDtos.Event = "Cache_in";
+                    var jsonData = JsonSerializer.Serialize(commandReadDtos);
+
+                    RedisCache(jsonData, "redis-cache");
                 }
                 catch (Exception ex)
                 {
